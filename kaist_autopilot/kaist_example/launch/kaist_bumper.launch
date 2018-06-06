@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="kaist_example" type="kaist_bumper" name="kaist_bumper" output="screen">
+  </node>
+</launch>

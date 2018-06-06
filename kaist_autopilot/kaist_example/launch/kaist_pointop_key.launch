@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="kaist_example" type="kaist_pointop_key" name="kaist_pointop_keyboard"  output="screen">
+  </node>
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="kaist_example" type="kaist_client" name="kaist_client" output="screen">
+  </node>
+</launch>

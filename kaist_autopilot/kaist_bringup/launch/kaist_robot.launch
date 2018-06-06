@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find kaist_bringup)/launch/kaist_core.launch"/>
+  <include file="$(find kaist_bringup)/launch/kaist_lidar.launch"/>
+
+  <node pkg="kaist_bringup" type="kaist_diagnostics" name="kaist_diagnostics" output="screen" />
+</launch>
