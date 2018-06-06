@@ -1,0 +1,23 @@
+<launch>
+  <env name="GAZEBO_RESOURCE_PATH" value="$(find kaist_gazebo)/models/kaist_autorace/ground_picture" />
+
+  <arg name="x_pos" default="0.245"/>
+  <arg name="y_pos" default="-1.787"/>
+  <arg name="z_pos" default="0"/>  
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find kaist_gazebo)/worlds/kaist_autorace.world" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>  
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find kaist_description)/urdf/kaist_burger_for_autorace.urdf.xacro" />
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model kaist_burger -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+   
+
+</launch>
+
+
